@@ -39,7 +39,7 @@
 //		CT: Christopher Teubert (christopher.a.teubert@nasa.gov)
 //		JW: Jason Watkins (jason.w.watkins@nasa.gov)
 
-#include "xplaneConnect.h"
+#include "xpc.h"
 
 #include <math.h>
 #include <stdarg.h>
@@ -678,7 +678,8 @@ int sendCTRL(XPCSocket sock, float values[], int size, char ac)
 		}
 		if (i == 4)
 		{
-			buffer[cur++] = val == -998 ? -1 : (unsigned char)val;
+			buffer[cur++] = val <= -997.9f ? -1 : (unsigned char)val;
+			//buffer[cur++] = val == -998 ? -1 : (unsigned char)val;  JMS
 		}
 		else
 		{
