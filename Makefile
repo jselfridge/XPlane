@@ -18,46 +18,36 @@ SOURCES     := $(shell find ./ -name '*.c')
 INCLUDES    := $(shell find ./ -name '*.h')
 OBJECTS     := $(SOURCES:$%.c=$%.o)
 
-#prefix      := /usr/local
-#RM          := rm -f
-#INSTALL     := install -m 4755
-#INSTALLDIR  := install -d -m 755
-
-#LINK        := ln -s -f
-#LINKDIR     := /etc/robotcontrol
-#LINKNAME    := link_to_startup_program
-
-#FILE        := ../param/sys_type
-#SYSTYPE     := $(shell cat ${FILE})
+RM          := rm -f
 
 
-#$(TARGET): $(OBJECTS)
-#	@$(LINKER) $(@) $(OBJECTS) $(LFLAGS)
-#	@echo "Made: $@"
+$(TARGET): $(OBJECTS)
+	@$(LINKER) $(@) $(OBJECTS) $(LFLAGS)
+	@echo "Made: $@"
 
-#$(OBJECTS): %.o : %.c $(INCLUDES)
-#	@$(CC) $(CFLAGS) $(WFLAGS) $(DEBUGFLAG) -D $(SYSTYPE) -c $< -o $(@)
-#	@echo "Compiled: "$<
+$(OBJECTS): %.o : %.c $(INCLUDES)
+	@$(CC) $(CFLAGS) $(WFLAGS) $(DEBUGFLAG) -c $< -o $(@)
+	@echo "Compiled: "$<
 
 
-#all: $(TARGET)
+all: $(TARGET)
 
-#debug:
-#	$(MAKE) $(MAKEFILE) DEBUGFLAG="-g -D DEBUG"
-#	@echo " "
-#	@echo "$(TARGET) Make Debug Complete"
-#	@echo " "
+debug:
+	$(MAKE) $(MAKEFILE) DEBUGFLAG="-g -D DEBUG"
+	@echo " "
+	@echo "$(TARGET) Make Debug Complete"
+	@echo " "
+
+clean:
+	@$(RM) $(OBJECTS)
+	@$(RM) $(TARGET)
+	@echo "$(TARGET) Clean Complete"
 
 #install:
 #	@$(MAKE) --no-print-directory
 #	@$(INSTALLDIR) $(DESTDIR)$(prefix)/bin
 #	@$(INSTALL) $(TARGET) $(DESTDIR)$(prefix)/bin
 #	@echo "$(TARGET) Install Complete"
-
-#clean:
-#	@$(RM) $(OBJECTS)
-#	@$(RM) $(TARGET)
-#	@echo "$(TARGET) Clean Complete"
 
 #uninstall:
 #	@$(RM) $(DESTDIR)$(prefix)/bin/$(TARGET)
@@ -67,4 +57,5 @@ OBJECTS     := $(SOURCES:$%.c=$%.o)
 #	@$(MAKE) install --no-print-directory
 #	@$(LINK) $(DESTDIR)$(prefix)/bin/$(TARGET) $(LINKDIR)/$(LINKNAME)
 #	@echo "$(TARGET) Set to Run on Boot"
+
 
