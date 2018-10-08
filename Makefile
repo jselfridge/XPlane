@@ -2,7 +2,7 @@
 # Justin M Selfridge, PhD
 # Gradient Consulting, LLC
 # jselfridge@gmail.com
-# Makefile (XPlane)
+# Makefile (XPlaneTest)
 #******************************************************************************/
 
 TARGET      := XPlaneTest
