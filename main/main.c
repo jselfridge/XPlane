@@ -1,16 +1,36 @@
+/*******************************************************************************
+*
+* Justin M Selfridge, PhD
+* Gradient Consulting, LLC
+* jselfridge@gmail.com
+*
+* main.c
+* Entry point for the 'XPlane_Sim' source code.
+*
+*******************************************************************************/
+#include "main.h"
 
 
 
 
-#include <stdio.h>
-int main() {
-printf("\nHello World\n");
-#ifdef DEBUG
-  printf("We have DEBUG!\n");
-#endif
+/*******************************************************************************
+* int main ( void )
+* Primary function for the running the 'Blue_Projects' program.
+*******************************************************************************/
+int main( void ) {
 
-return 0;
+  printf("\nHello World\n");
+
+  #ifdef DEBUG
+    printf("We have DEBUG!\n");
+  #endif
+
+  return 0;
 }
+
+
+
+
 
 
 

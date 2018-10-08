@@ -2,10 +2,10 @@
 # Justin M Selfridge, PhD
 # Gradient Consulting, LLC
 # jselfridge@gmail.com
-# Makefile (XPlaneTest)
+# Makefile (XPlane_Sim)
 #******************************************************************************/
 
-TARGET      := XPlaneTest
+TARGET      := XPlane_Sim
 
 CC          := gcc
 LINKER      := gcc -o
