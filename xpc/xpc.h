@@ -1,7 +1,9 @@
-//Copyright (c) 2013-2016 United States Government as represented by the Administrator of the
-//National Aeronautics and Space Administration. All Rights Reserved.
+//******************************************************************************
 //
-//DISCLAIMERS
+// Copyright (c) 2013-2016 United States Government as represented by the Administrator of the
+// National Aeronautics and Space Administration. All Rights Reserved.
+//
+// DISCLAIMERS
 //    No Warranty: THE SUBJECT SOFTWARE IS PROVIDED "AS IS" WITHOUT ANY WARRANTY OF ANY KIND, 
 //    EITHER EXPRESSED, IMPLIED, OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, ANY WARRANTY THAT
 //    THE SUBJECT SOFTWARE WILL CONFORM TO SPECIFICATIONS, ANY IMPLIED WARRANTIES OF
@@ -21,6 +23,10 @@
 //    UNITED STATES GOVERNMENT, ITS CONTRACTORS AND SUBCONTRACTORS, AS WELL AS ANY PRIOR RECIPIENT,
 //    TO THE EXTENT PERMITTED BY LAW.  RECIPIENT'S SOLE REMEDY FOR ANY SUCH MATTER SHALL BE THE
 //    IMMEDIATE, UNILATERAL TERMINATION OF THIS AGREEMENT.
+//
+//    REVISED BY: JUSTIN M SELFRIDGE (JMS)
+//
+//******************************************************************************
 #ifndef XPC_H
 #define XPC_H
 
@@ -271,3 +277,5 @@ int sendWYPT(XPCSocket sock, WYPT_OP op, float points[], int count);
     }
 #endif
 #endif
+
+

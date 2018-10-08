@@ -15,29 +15,38 @@
 
 /*******************************************************************************
 * int main ( void )
-* Primary function for the running the 'Blue_Projects' program.
+* Primary function for the running the 'XPlane_Sim' program.
 *******************************************************************************/
 int main( void ) {
 
-  printf("\nHello World\n");
-
+  // Begin the program
   #ifdef DEBUG
-    printf("We have DEBUG!\n");
+    printf("\nBegin XPlane_Sim program\n");
   #endif
 
+  // Exit program
+  return 0;
+}
+
+
+
+
+/*
+// Copied from example code...
+
   // Open Socket
-  const char* IP = "127.0.0.1";    // IP Address of computer running X-Plane
+  const char* IP = "127.0.0.1";
   XPCSocket sock = openUDP(IP);
   float tVal[1];
   int tSize = 1;
   if( getDREF( sock, "sim/test/test_float", tVal, &tSize ) < 0 ) {
-    printf("Error establishing connecting. Unable to read data from X-Plane.");
+    printf( "Error (main): Unable to read data from X-Plane. /n" );
     return EXIT_FAILURE;
   }
 
   // Set Location/Orientation (sendPOSI)
   // Set Up Position Array
-  float POSI[9] = { 0.0 };
+  float POSI[9] = { 0.0f };
   POSI[0] = 37.524;     // Lat
   POSI[1] = -122.06899; // Lon
   POSI[2] = 2500;       // Alt
@@ -56,7 +65,7 @@ int main( void ) {
   sendPOSI( sock, POSI, 7, 1 );
 
   // Set Rates (sendDATA)
-  float data[3][9] = { 0 };
+  float data[3][9] = { 0.0f };
 
   // Initialize data values to -998 to not overwrite values.
   for( int i=0; i<3; i++ ) {
@@ -131,34 +140,7 @@ int main( void ) {
   }
 
   printf("---End Program---\n");
-
-  return 0;
-}
-
-
-
-
-
-
-
-
-/******************************************************************************/
-
-
-//#include <stdio.h>
-//#include <stdlib.h>
-//#include <string.h>
-//#include <time.h>
-//#ifdef WIN32
-//#include <Windows.h>
-//#define sleep(n) Sleep(n * 1000)
-//#endif
-
-//int main()
-//{
-
-//	return 0;
-//}
+*/
 
 
 
